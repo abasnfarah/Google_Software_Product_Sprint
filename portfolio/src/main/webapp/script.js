@@ -13,18 +13,18 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random fact to the page.
  */
-function addRandomGreeting() {
-  const greetings = [
+function addRandomFacts() {
+  const randomFacts = [
     "I have a twin brother",
     "Favorite ice cream flavor is pistachio",
   ];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const fact = randomFacts[Math.floor(Math.random() * randomFacts.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById("greeting-container");
-  greetingContainer.innerText = greeting;
+  const factContainer = document.getElementById("fact-container");
+  factContainer.innerText = fact;
 }
