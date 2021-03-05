@@ -28,3 +28,12 @@ function addRandomFacts() {
   const factContainer = document.getElementById("fact-container");
   factContainer.innerText = fact;
 }
+
+
+async function nextFibonnaci(){
+    const responseFromServer = await fetch("/fib");
+    const textFromResponse = await responseFromServer.text();
+
+    const fibContainer = document.getElementById("fib-container");
+    fibContainer.innerHTML = textFromResponse;
+}
