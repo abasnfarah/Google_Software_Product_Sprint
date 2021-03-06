@@ -29,11 +29,27 @@ function addRandomFacts() {
   factContainer.innerText = fact;
 }
 
+async function nextFibonnaci() {
+  const responseFromServer = await fetch("/fib");
+  const fib = await responseFromServer.json();
 
-async function nextFibonnaci(){
-    const responseFromServer = await fetch("/fib");
-    const textFromResponse = await responseFromServer.text();
+  const fibContainer = document.getElementById("fib-container");
+  fibContainer.innerHTML = "";
 
-    const fibContainer = document.getElementById("fib-container");
-    fibContainer.innerHTML = textFromResponse;
+  fibContainer.appendChild(
+    createListElement("Previous fibonacci number: " + fib.prevFib)
+  );
+  fibContainer.appendChild(
+    createListElement("Current fibonacci number: " + fib.currFib)
+  );
+  fibContainer.appendChild(
+    createListElement("Next fibonacci number: " + fib.nextFib)
+  );
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement("li");
+  liElement.innerText = text;
+  return liElement;
 }
