@@ -15,13 +15,13 @@ import com.google.sps.data.FibonacciNumbers;
 
 @WebServlet("/fib")
 public final class DisplayNextFibonacciServlet extends HttpServlet {
-    // Using BigInteger to ovid integer overflow
+    // Using BigInteger to avoid integer overflow
     BigInteger fib = new BigInteger("1");
     BigInteger prevFib = new BigInteger("0");
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // Calcualate the next fibonnaci number
+        // Calculate the next fibonnaci number
         BigInteger temp = prevFib;
         prevFib = fib;
         fib = fib.add(temp);
@@ -31,7 +31,7 @@ public final class DisplayNextFibonacciServlet extends HttpServlet {
         FibonacciNumbers fibonacciNumbers = new FibonacciNumbers(temp, prevFib, fib);
         String json = convertToJson(fibonacciNumbers);
 
-        // Send tthe JSON as the response
+        // Send the JSON as the response
         response.setContentType("application/json;");
         response.getWriter().println(json);
    }
