@@ -5,12 +5,18 @@
     <title>Abas Farah | Google SPS</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key="></script>
   </head>
-  <body>
+  <body onload="createMap();">
     <div id="content">
       <nav id="nav">
         <a href="index.html" class="active">Abas Farah</a>
-        <a href="./assets/resume/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a
+          href="./assets/resume/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Resume</a
+        >
         <a href="mailto:abasnfarah@gmail.com">Contact Me</a>
       </nav>
       <h1>My Portfolio</h1>
@@ -51,6 +57,9 @@
         <br />
         <input type="submit" />
       </form>
+
+      <h2>Ice Cream Shops</h2>
+      <div id="map"></div>
     </div>
   </body>
 </html>
